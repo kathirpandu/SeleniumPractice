@@ -1,0 +1,51 @@
+import org.apache.log4j.Logger:
+
+import commonUtils.CommonUtil;
+
+import commonUtils. Driver Properties;
+
+import io.cucumber.java.en.And:
+
+import io.cucumber.java.en.Givenp
+
+import io.cucumber.java.en. Then:
+
+import io.cucumber.java.en.When:
+
+public class Citidirect extends Driver Properties (
+
+CommonUtil commonUtil new CommonUtil();
+
+static Logger logger Logger.getLogger (Citidirect.class);
+
+Home home new Home();
+
+SoftAssert sAssert new SoftAssert();
+
+public Boolean[] approve;
+
+private static List<Map<String, String>> logindatar
+
+private static Integer TCNo nulla
+
+I
+
+@Given ("CD TestData Taken from (string) and Rowindex (int)")
+
+public void icr test data taken from and rowindex (String SheetName, int RowNo)
+
+throws Invalid FormatException, IOException [
+
+Testdata (SheetName, RowNo);
+
+commonUtil.testCaseNo(tc No);
+
+commonUtil.testsheet (SheetName);
+
+if (tc_Execution.equalsIgnoreCase("Yes")) {
+
+logger.info("Executing" to No);
+
+} else {
+
+Assume.assumeTrue(te No + not Executed", false);
