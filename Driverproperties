@@ -1,0 +1,85 @@
+package commonUtils;
+
+import java.util.Collections:
+
+import java.util.concurrent.TimeUnit:
+
+import org.openqa.selenium. UnexpectedAlertBehaviour:
+
+import org.openqa.selenium.WebDriver:
+
+import org.openqa.selenium,chrome.ChromeDriver:
+
+import org.openqa.selenium.chrome.ChromeOptions:
+
+import org.openqa.selenium.edge.EdgeDriver:
+
+import org.openqa.selenium.edge.EdgeOptions/
+
+public class DriverProperties (
+
+I
+
+public static WebDriver driverr
+
+public static PropertiesFile prop new PropertiesFile();
+
+@purpose: used for browserinitialization
+
+@return driver
+
+public static WebDriver browserinitialization() (
+
+if (driver = null) {
+
+switch (prop.browser) {
+
+case "chrome": [
+
+System.setProperty("webdriver.chrome.driver", prop.ChromeDriverLocation);
+
+ChromeOptions options new ChromeOptions();
+
+options.addArguments("--remote-allow-origins=*");
+
+options.setExperimentaloption("useAutomationExtension", false); options.setExperimental Option("exclude@witches", Collections.singletonList("enable-automation")); );
+
+options.setUnhandled PromptBehaviour (UnexpectedAlertBehaviour.IGNORE
+
+driver now ChromeDriver (options);
+
+driver new ChromeDriver (options):
+
+break:
+
+case "edge": {
+
+System.setProperty("webdriver.edge.driver", prop. EdgeDriverLocation):
+
+EdgeOptions options = new EdgeOptions():
+
+options.addArguments("--remote-allow-origins=*");
+
+options.addArguments("--ignore-certificate-errors");
+
+options.setExperimentaloption("useAutomation Extension", false);
+
+options.setExperimental Option("excludeSwitches", Collections.singletonList("enable-automation"));
+
+options.setUnhandled PromptBehaviour (UnexpectedAlertBehaviour.IGNORE);
+
+options.addArguments("start-maximized");
+
+//options.addArguments ("headless")
+
+driver new EdgeDriver (options): I
+
+break:
+
+driver.manage().deleteAllCookies();
+
+driver.manage().window().maximize();
+
+driver.manage().timeouts().pageLoadTimeout (100, TimeUnit.SECONDS); // driver.manage().timeouts().implicitlyWait (30, TimeUnit.SECONDS)
+
+return driver:
